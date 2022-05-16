@@ -1,0 +1,21 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: APIドキュメント
+servers:
+  - url: 'http://localhost:4011'
+    description: Local Vue.js Development Mock
+  - url: 'http://localhost:8080'
+    description: Local Laravel API Server
+  - url: 'http://staging-todo/'
+    description: staging server
+  - url: 'http://production-todo/'
+    description: production server
+paths:
+  "/pets":
+    $ref: "./paths/pets.yaml"
+  "/pets/{petId}":
+    $ref: "./paths/pets.petid.yaml"
+components:
+  schemas:
+    $ref: "./schemas/index.yaml"

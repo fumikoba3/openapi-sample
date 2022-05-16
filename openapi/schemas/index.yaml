@@ -1,0 +1,6 @@
+Pet:
+  $ref: "./Pet.yaml"
+Pets:
+  $ref: "./Pets.yaml"
+Error:
+  $ref: "./Error.yaml"
