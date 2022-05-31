@@ -3,7 +3,7 @@ info:
   version: 1.0.0
   title: APIドキュメント
 servers:
-  - url: 'http://localhost:4011'
+  - url: 'http://localhost:18080'
     description: Local Vue.js Development Mock
   - url: 'http://localhost:8080'
     description: Local Laravel API Server
@@ -11,11 +11,16 @@ servers:
     description: staging server
   - url: 'http://production-todo/'
     description: production server
+tags:
+  - name: Users
+    description: ユーザーに関する API
 paths:
-  "/pets":
-    $ref: "./paths/pets.yaml"
-  "/pets/{petId}":
-    $ref: "./paths/pets.petid.yaml"
+  "/users":
+    $ref: "./paths/users.yaml"
+  "/users/{id}":
+    $ref: "./paths/user.yaml"
+  "/login":
+    $ref: "./paths/login.yaml"
 components:
   schemas:
     $ref: "./schemas/index.yaml"

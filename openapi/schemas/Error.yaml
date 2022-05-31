@@ -8,3 +8,15 @@ properties:
     format: int32
   message:
     type: string
+  messages:
+    type: array
+    items:
+      type: object
+      required:
+        - key
+        - message
+      properties:
+        key:
+          type: string
+        message:
+          type: string

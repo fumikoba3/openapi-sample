@@ -1,0 +1,30 @@
+post:
+  summary: ログイン
+  operationId: login
+  description: |
+    - validation:
+      - メールアドレス存在チェック
+  tags:
+    - Users
+  requestBody:
+    description: 追加したいモデルのURLと名前
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            email
+          properties:
+            email:
+              type: string
+              description: メールアドレス
+  responses:
+    '200':
+      description: |
+        success
+        - 3分以内の有効な一時トークンが付与されたURLを発行
+          - TODO: 有効時間は要検討
+        - 該当のユーザーにログインURLが記載されたメールを送信する
+    '400':
+      description: Bad Request
+

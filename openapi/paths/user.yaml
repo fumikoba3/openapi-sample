@@ -1,22 +1,26 @@
 get:
-  summary: Info for a specific pet
-  operationId: showPetById
+  summary: ユーザ 詳細
+  operationId: getUser
   tags:
-    - pets
+    - Users
   parameters:
-    - name: petId
-      in: path
-      required: true
-      description: The id of the pet to retrieve
+    - name: id
+      in: query
+      description: ユーザID(uuid)
       schema:
         type: string
   responses:
     '200':
-      description: Expected response to a valid request
+      description: ''
+      headers:
+        x-next:
+          description: ''
+          schema:
+            type: string
       content:
         application/json:
           schema:
-            $ref: "../schemas/Pet.yaml"
+            $ref: "../schemas/User.yaml"
     default:
       description: unexpected error
       content:

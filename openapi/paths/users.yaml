@@ -1,0 +1,73 @@
+get:
+  summary: ユーザ 一覧
+  operationId: listUser
+  tags:
+    - Users
+  parameters:
+    - name: email
+      in: query
+      description: メールアドレス
+      schema:
+        type: string
+    - name: name
+      in: query
+      description: 名前
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ''
+      headers:
+        x-next:
+          description: ''
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Users.yaml"
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Error.yaml"
+post:
+  summary: ユーザ 追加
+  operationId: createUser
+  description: |
+    - validation:
+      - 同メールアドレスが存在しないか
+  tags:
+    - Users
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            email
+            name
+          properties:
+            email:
+              type: string
+              description: メールアドレス
+            name:
+              type: string
+              description: 名前
+            rollType:
+              type: integer
+              description: 権限タイプ
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/User.yaml"
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Error.yaml"
+
