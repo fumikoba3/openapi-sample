@@ -10,7 +10,7 @@ services:
       - '4011:4010'
     command: mock -h 0.0.0.0 /api/openapi.yaml
     volumes:
-      - ../../openapi/build:/api
+      - ../../document/openapi/build:/api
   # Redoc
   redoc:
     container_name: samples-redoc
@@ -21,4 +21,4 @@ services:
     ports:
       - '18080:8080'
     volumes:
-      - ../../openapi/build:/usr/share/nginx/html/api
+      - ../../document/openapi/build:/usr/share/nginx/html/api

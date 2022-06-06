@@ -1,3 +1,4 @@
-/openapi/build/openapi.yaml
+/document/openapi/build/openapi.yaml
 openapi.html
 .DS_Store
+/node_modules

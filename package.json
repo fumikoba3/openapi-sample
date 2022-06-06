@@ -1,8 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "openapi-build": "swagger-cli bundle -o ./openapi/build/openapi.yaml -t yaml ./openapi/openapi.yaml",
-        "oepnapi-build-html": "redoc-cli bundle ./openapi/build/openapi.yaml -o openapi.html"
+        "openapi-build": "swagger-cli bundle -o ./document/openapi/build/openapi.yaml -t yaml ./document/openapi/openapi.yaml",
+        "openapi-build-html": "redoc-cli bundle ./document/openapi/build/openapi.yaml -o openapi.html"
     },
     "devDependencies": {
         "@apidevtools/swagger-cli": "^4.0.4",

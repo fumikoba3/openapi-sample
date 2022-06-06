@@ -21,7 +21,7 @@ get:
         application/json:
           schema:
             $ref: "../schemas/User.yaml"
-    default:
+    '500':
       description: unexpected error
       content:
         application/json:

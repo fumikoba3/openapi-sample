@@ -15,11 +15,11 @@ tags:
   - name: Users
     description: ユーザーに関する API
 paths:
-  "/users":
+  "/api/users":
     $ref: "./paths/users.yaml"
-  "/users/{id}":
+  "/api/users/{id}":
     $ref: "./paths/user.yaml"
-  "/login":
+  "/api/login":
     $ref: "./paths/login.yaml"
 components:
   schemas:
